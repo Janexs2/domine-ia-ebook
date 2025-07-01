@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domine IA</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="matrix-bg"></div>
+    <div class="particles-container" id="particles"></div>
+    
+    <div class="game-hud">
+        <div class="player-info">
+            <span class="player-name">Player: Convidado</span>
+            <span class="xp-counter">XP: <span id="xp-value">0</span></span>
+        </div>
+    </div>
+
+    <div class="funil-container">
+        <!-- Tela 1 - Portal de Entrada -->
+        <section id="tela1" class="tela ativa">
+            <div class="cyber-terminal">
+                <div class="terminal-header">
+                    <div class="terminal-controls">
+                        <span class="control red"></span>
+                        <span class="control yellow"></span>
+                        <span class="control green"></span>
+                    </div>
+                    <h1>SYSTEM_ACCESS > DOMINE_IA.EXE</h1>
+                </div>
+                <div class="terminal-body">
+                    <div class="scanline"></div>
+                    <p class="typing-effect">> Inicializando protocolo futurista...</p>
+                    <p class="typing-effect delay-1">> Carregando módulos de IA...</p>
+                    <p class="typing-effect delay-2">> Verificando credenciais...</p>
+                    <p class="typing-effect delay-3 highlight">> ACESSO CONCEDIDO</p>    
+                    <div class="cyber-button-container">
+                        <button id="iniciarJornada" class="cyber-button">
+                            <span class="cyber-text">INICIAR MISSÃO</span>
+                            <span class="glow"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="narrativa-ia">Sistema pronto para inicialização...</div>
+        </section>
+
+        <!-- Tela 2 - Escolha de Trilha -->
+        <section id="tela2" class="tela">
+            <div class="cyber-terminal">
+                <div class="terminal-header">
+                    <div class="terminal-controls">
+                        <span class="control red"></span>
+                        <span class="control yellow"></span>
+                        <span class="control green"></span>
+                    </div>
+                    <h1>SYSTEM_SELECTION > IA_PATH.exe</h1>
+                </div>
+                <div class="terminal-body">
+                    <div class="scanline"></div>
+                    <p class="typing-effect">> Inicializando módulo de seleção...</p>
+                    <p class="typing-effect delay-1">> Carregando trilhas disponíveis...</p>
+                    <p class="typing-effect delay-2 highlight">> SELECIONE SUA TRILHA:</p>
+                    <div class="cyber-cards-container">
+                        <div class="cyber-path-card" data-path="vendas">
+                            <div class="card-header">
+                                <span class="path-icon">🤖</span>
+                                <h3>VENDEDOR DIGITAL</h3>
+                            </div>
+                            <p class="typing-effect delay-3">IA para Vendas e Conversão</p>
+                            <div class="cyber-glow"></div>
+                        </div>
+                        <div class="cyber-path-card" data-path="conteudo">
+                            <div class="card-header">
+                                <span class="path-icon">🧠</span>
+                                <h3>CRIADOR DE CONTEÚDO</h3>
+                            </div>
+                            <p class="typing-effect delay-4">IA para Criação Automatizada</p>
+                            <div class="cyber-glow"></div>
+                        </div>
+                        <div class="cyber-path-card" data-path="produtividade">
+                            <div class="card-header">
+                                <span class="path-icon">⚙️</span>
+                                <h3>AUTOMAÇÃO TOTAL</h3>
+                            </div>
+                            <p class="typing-effect delay-5">IA para Produtividade Extrema</p>
+                            <div class="cyber-glow"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="path-feedback">
+                <span id="trilha-escolhida"></span>
+            </div>
+        </section>
+
+        <!-- Tela 3 - Oferta Secreta (ATUALIZADA) -->
+        <section id="tela3" class="tela">
+            <div class="capsule-container">
+                <div class="ebook-3d">
+                    <img src="img/EBOOK IA.jpg" alt="Capa do Ebook Domine IA" class="ebook-cover">
+                    <div class="ebook-pages"></div>
+                    <div class="ebook-glow"></div>
+                </div>
+            </div>
+            <div class="offer-content">
+                <h2 class="digitando">Desbloqueado com 75% de desconto!</h2>
+                <div class="price-container">
+                    <span class="old-price">De R$50,00</span>
+                    <span class="new-price">por R$12,90</span>
+                </div>
+                <button class="neon-btn glow" id="pegarOferta">
+                    <span>Pegar Agora</span>
+                </button>
+            </div>
+            <div class="achievement-unlocked">
+                <i class="fas fa-trophy"></i>
+                <span>Oferta Hacker desbloqueada!</span>
+            </div>
+        </section>
+
+        <!-- Tela 4 - Bônus Especial -->
+        <section id="tela4" class="tela">
+            <div class="holographic-document">
+                <div class="document-content">
+                    <h3>📜 50 Prompts Ultra IA</h3>
+                    <ul class="prompts-list">
+                        <li class="digitando-item">Prompt 1: "Gere 5 ideias de posts sobre..."</li>
+                        <li class="digitando-item">Prompt 2: "Crie uma mensagem de vendas para..."</li>
+                        <li class="digitando-item">Prompt 3: "Automatize respostas para..."</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bonus-badge">
+                <span>Bônus Exclusivo</span>
+            </div>
+            <button class="neon-btn" id="avancarTroféu">
+                <span>Avançar para Troféu</span>
+            </button>
+            <div class="achievement-unlocked">
+                <i class="fas fa-star"></i>
+                <span>Prompt Master desbloqueado!</span>
+            </div>
+        </section>
+
+        <!-- Tela 5 - Conexão Final -->
+        <section id="tela5" class="tela">
+            <div class="terminal-container">
+                <div class="terminal-header">
+                    <h2>⚠️ FINALIZAÇÃO DE ACESSO INICIADA</h2>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-line">
+                        <span class="terminal-text">Analisando perfil...</span>
+                        <span class="terminal-check">✔️</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="terminal-text">Validando progresso...</span>
+                        <span class="terminal-check">✔️</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="terminal-text">Autorizando desbloqueio exclusivo...</span>
+                        <span class="terminal-pulse">⚡</span>
+                    </div>
+                </div>
+            </div>
+            <div class="reward-chest">
+                <h3>🎁 VOCÊ DESBLOQUEOU:</h3>
+                <ul class="reward-list">
+                    <li>Domine a IA – Jornada Futurista (Ebook)</li>
+                    <li>Lista Premium com 50 Prompts Prontos</li>
+                    <li>Atualizações futuras gratuitas</li>
+                    <li>XP exclusivo no universo da IA</li>
+                </ul>
+            </div>
+            <div class="checkout-container">
+                <button class="kiwify-btn pulsante-grande" id="finalizarCompra">
+                    🔓 Desbloquear Agora por R$12,90
+                </button>
+                <div class="security-text">
+                    🔐 Pagamento 100% seguro via Kiwify
+                </div>
+                <div class="countdown">
+                    ⚠️ Oferta termina em: <span id="countdown-timer">00:04:59</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <audio id="hoverSound" src="hover-sound.mp3" preload="auto"></audio>
+    <audio id="clickSound" src="click-sound.mp3" preload="auto"></audio>
+    <audio id="unlockSound" src="unlock-sound.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
